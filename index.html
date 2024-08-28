@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <img class="encabezado__logo" src="./assets/Logo.png" alt="logoCifrado">
+    </header>
+    <main>
+        <form class="caja__formulario">
+            <textarea class="entrada__texto" id="entradaTexto" name="mensaje" cols="30" rows="10"
+                placeholder="Escribe tu texto aquí"></textarea>
+            <div class="contenedor">
+                <div class="botones__contenedor">
+                    <div class="mensaje__alerta">
+                        <img src="/assets/bi_exclamation-circle-fill.png" alt="iconoAlerta">
+                        <span>Sólo letras minúsculas y sin acentos</span>
+                    </div>
+                </div>
+                <div class="boton__enviar">
+                    <input class="boton__formulario" type="submit" value="Encriptar" id="botonCifrar">
+                    <input class="boton__formulario--secundario" type="submit" value="Desencriptar" id="botonDescifrar">
+                </div>
+            </div>
+        </form>
+
+        <aside class="resultado">
+            <img src="./assets/Muñeco.png" alt="" class="resultado__imagen">
+            <div id="cargando" class="cargador oculto"></div>
+            <div class="resultado__caja">
+                <h3 class="resultado__titulo">No se encontró ningún mensaje</h3>
+                <p class="resultado__texto">Escribe el texto que deseas encriptar o desencriptar.</p>
+                <button id="botonCopiar" class="boton__formulario--secundario oculto">
+                    Copiar
+                </button>
+            </div>
+        </aside>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

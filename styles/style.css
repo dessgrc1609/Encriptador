@@ -1,0 +1,222 @@
+:root {
+    --azul-oscuro: #0a3871;
+    --color-principal: #f3f5fc;
+    --azul-claro: #d8dfe8;
+    --fuente-inter: "Inter", sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: var(--color-principal);
+    font-family: var(--fuente-inter);
+}
+  
+  header {
+    margin-bottom: 5rem;
+    width: 60%;
+  }
+  
+  main {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  header img {
+    width: 250px;
+    height: 120px;
+  }
+  
+  .caja__formulario {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #f3f5fc;
+    justify-content: space-between;
+  }
+
+  .entrada__texto {
+    width: 100%;
+    max-width: 577px;
+    border-color: transparent;
+    height: 64dvh;
+    outline: none;
+    background: transparent;
+    font-size: 3.2rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 3rem;
+    overflow: auto;
+  }
+  
+  ::placeholder {
+    color: var(--azul-oscuro);
+  }
+  
+  .mensaje__alerta {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .boton__enviar {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .boton__formulario {
+    background: var(--azul-oscuro);
+    color: white;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px solid var(--azul-oscuro);
+    cursor:pointer;
+  }
+  .boton__formulario:hover {
+    background-color: var(--color-principal);
+    color: var(--azul-oscuro);
+  }
+  
+  .boton__formulario--secundario {
+    background: transparent;
+    color: var(--azul-oscuro);
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    cursor:pointer;
+  }
+  
+  .boton__formulario--secundario:hover{
+        background-color: var(--azul-oscuro);
+        color: var(--color-principal);
+  }
+  .resultado {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    gap: 15rem;
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    left: 65%;
+    top: 5%;  
+}
+
+.resultado__caja{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 1%;
+     gap: 16px;
+     position: absolute;
+     width: 100%;
+     top: 65%;
+     text-align: center;
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+  .resultado__imagen {
+    margin-right: 20px;
+    position: absolute; 
+    width: 80%;
+    height: 50%;
+    top: 15%;
+    
+}
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+  
+    .boton__enviar {
+      justify-content: center;
+    }
+  
+    .resultado {
+      height: auto;
+      max-width: 600px;
+      margin-top: 2rem;
+      min-height: 186px;
+    }
+  
+    .resultado__caja{
+        height: auto;
+        max-width: 600px;
+        margin-top: 2rem;
+        min-height: 186px;
+    }
+
+    .resultado__imagen {
+      display: none;
+    }
+  
+    header img {
+      width: 50px;
+    }
+  }
+  
+  .cargador {
+    width: 100px;
+    height: 45px;
+    position: relative;
+  }
+  
+  .cargador:before,
+  .cargador:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    box-shadow: 0 0 0 50px;
+    clip-path: polygon(
+      -50px -20px,
+      10% -12px,
+      20% 0,
+      calc(50% - 15px) 0,
+      calc(50% - 10px) -20px,
+      calc(50% - 8px) -15px,
+      calc(50% + 8px) -15px,
+      calc(50% + 10px) -20px,
+      calc(50% + 15px) 0,
+      80% 0,
+      90% -12px,
+      calc(100% + 50px) -20px,
+      100% 80%,
+      calc(100% + 10px) calc(100% + 10px),
+      60% 100%,
+      50% calc(100% + 15px),
+      40% 100%,
+      -10px calc(100% + 10px),
+      0 80%
+    );
+  }
+  
+  .cargador:after {
+    animation: l9 1s infinite;
+    transform: perspective(300px) translateZ(0px);
+  }
+  
+  @keyframes l9 {
+    to {
+      transform: perspective(300px) translateZ(100px);
+      opacity: 0;
+    }
+  }
